@@ -1,3 +1,4 @@
+import * as Linking from "expo-linking";
 import { useSSO } from "@clerk/expo";
 import { useState } from "react";
 import { Alert } from "react-native";
@@ -11,7 +12,10 @@ const useSocialAuth = () => {
     if (loadingStrategy) return;
     setLoadingStrategy(strategy);
     try {
-      const { createdSessionId, setActive } = await startSSOFlow({ strategy });
+      const { createdSessionId, setActive } = await startSSOFlow({ 
+        strategy,
+        redirectUrl: Linking.createURL("/", { scheme: "studybuddy" }),
+      });
       if (!createdSessionId || !setActive) {
         const provider =
           strategy === "oauth_google"
