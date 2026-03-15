@@ -141,6 +141,11 @@ const AuthScreen = () => {
               )}
             </Pressable>
           </View>
+          <Text className="text-foreground-subtle text-[11px] text-center leading-4">
+            By continuing, you agree to our{" "}
+            <Text className="text-primary-light">Terms of Service</Text> and{" "}
+            <Text className="text-primary-light">Privacy Policy</Text>
+          </Text>
         </View>
       </SafeAreaView>
     </View>
