@@ -8,6 +8,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const AuthScreen = () => {
   const { handleSocialAuth, loadingStrategy } = useSocialAuth();
+
   const isLoading = loadingStrategy !== null;
   const FEATURED_CHIPS = [
     {
