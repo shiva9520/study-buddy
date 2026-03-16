@@ -5,7 +5,7 @@ import { NativeTabs } from "expo-router/unstable-native-tabs";
 const TabsLayout = () => {
   const { isSignedIn, isLoaded } = useAuth();
 
-  if (!isLoaded) return null;
+  if (!isLoaded) return null
 
   if (!isSignedIn) {
     return <Redirect href={"/(auth)"} />;
