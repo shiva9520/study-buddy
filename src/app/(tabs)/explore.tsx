@@ -5,8 +5,8 @@ import { useAppContext } from "../contexts/AppProvider";
 const explore = () => {
   const { channel } = useAppContext();
   return (
-    <View>
-      <Text>explore</Text>
+    <View className="flex-1 bg-background">
+      <Text className="text-white">explore</Text>
     </View>
   );
 };

@@ -16,7 +16,8 @@ const syncUserToStream = async (user: UserResource) => {
         name:
           user.fullName ??
           user.username ??
-          user.emailAddresses[0].emailAddress.split("@")[0],
+          user.emailAddresses?.[0]?.emailAddress?.split("@")[0] ??
+          "User",
         image: user.imageUrl,
       }),
     });
@@ -55,7 +56,8 @@ const ChatClient = ({
       name:
         user.fullName ??
         user.username ??
-        user.emailAddresses[0].emailAddress.split("@")[0],
+        user.emailAddresses?.[0]?.emailAddress?.split("@")[0] ??
+        "User",
       image: user.imageUrl,
     },
     tokenOrProvider: tokenProvider,

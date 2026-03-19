@@ -77,9 +77,9 @@ const ChatsScreen = () => {
         additionalFlatListProps={{
           contentContainerStyle: { flexGrow: 1 },
         }}
-        // EmptyStateIndicator={() => (
-        //   <Text className="flex-1 text-white">Hey start chatting</Text>
-        // )}
+      // EmptyStateIndicator={() => (
+      //   <Text className="flex-1 text-white">Hey start chatting</Text>
+      // )}
       />
     </SafeAreaView>
   );
