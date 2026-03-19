@@ -1,13 +1,13 @@
 import { ClerkProvider } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
+import * as Sentry from "@sentry/react-native";
 import { Stack } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "../../global.css";
 
-import * as Sentry from '@sentry/react-native';
-
 Sentry.init({
-  dsn: 'https://8053bfc0ef9b06037fad0d1bda98b237@o4511069631021056.ingest.us.sentry.io/4511069641572352',
+  dsn: "https://8053bfc0ef9b06037fad0d1bda98b237@o4511069631021056.ingest.us.sentry.io/4511069641572352",
 
   // Adds more context data to events (IP address, cookies, user, etc.)
   // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
@@ -31,10 +31,12 @@ export default function RootLayout() {
   const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
   return (
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(auth)" />
-        <Stack.Screen name="(tabs)" />
-      </Stack>
+      <GestureHandlerRootView className="flex-1">
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(auth)" />
+          <Stack.Screen name="(tabs)" />
+        </Stack>
+      </GestureHandlerRootView>
     </ClerkProvider>
   );
 }
