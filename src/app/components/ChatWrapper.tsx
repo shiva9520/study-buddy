@@ -64,7 +64,7 @@ const ChatClient = ({
   if (!chatClient) return <FullScreenLoader message="Loading chat..." />;
 
   return (
-    <OverlayProvider>
+    <OverlayProvider value={{ style: studyBuddyTheme }}>
       <Chat client={chatClient} style={studyBuddyTheme}>
         {children}
       </Chat>
