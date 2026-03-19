@@ -1,11 +1,17 @@
+import * as Sentry from "@sentry/react-native";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
+import { Button, SafeAreaView, StyleSheet, Text } from "react-native";
 const index = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>index</Text>
-    </View>
+      <Button
+        title="Try!"
+        onPress={() => {
+          Sentry.captureException(new Error("First error"));
+        }}
+      />
+    </SafeAreaView>
   );
 };
 

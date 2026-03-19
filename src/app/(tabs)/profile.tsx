@@ -1,5 +1,5 @@
 import { COLORS } from "@/lib/theme";
-import { useAuth, useUser } from "@clerk/clerk-expo";
+import { useAuth, useUser } from "@clerk/expo";
 import { Ionicons } from "@expo/vector-icons";
 import * as Sentry from "@sentry/react-native";
 import { Image } from "expo-image";
