@@ -3,7 +3,7 @@ import React from "react";
 import { Button, SafeAreaView, StyleSheet, Text } from "react-native";
 const index = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1 justify-center items-center">
       <Text>index</Text>
       <Button
         title="Try!"
